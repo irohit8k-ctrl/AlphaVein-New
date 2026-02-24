@@ -1,0 +1,294 @@
+{% extends "base.html" %}
+
+{% block title %}Workouts - AlphaVein Gym{% endblock %}
+
+{% block content %}
+<!-- ================= WORKOUTS SECTION ================= -->
+<section class="section">
+    <div class="section-title animate-on-scroll">
+        <h2>Workouts</h2>
+        <p>Explore our comprehensive workout programs designed for every muscle group</p>
+    </div>
+    
+    <div class="workout-grid">
+        <!-- Biceps -->
+        <div class="workout-card animate-on-scroll" data-workout="biceps">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400" alt="Biceps Workout" loading="lazy">
+                <span class="workout-badge">Arms</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active beginner"></span>
+                    <span class="difficulty-dot active beginner"></span>
+                    <span class="difficulty-dot"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Biceps</h3>
+                    <div class="workout-icon">💪</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/kwLz2M3GlC4">Barbell Curl</li>
+                    <li data-video="https://www.youtube.com/embed/ykJmrZ5v0Oo">Dumbbell Curl</li>
+                    <li data-video="https://www.youtube.com/embed/2v2x8s6O1nE">Hammer Curl</li>
+                    <li data-video="https://www.youtube.com/embed/vBwdO3rF8wM">Preacher Curl</li>
+                    <li data-video="https://www.youtube.com/embed/8iPEnn-ltC8">Incline Dumbbell Curl</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Triceps -->
+        <div class="workout-card animate-on-scroll" data-workout="triceps">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1597347316205-36f6c451902a?w=400" alt="Triceps Workout" loading="lazy">
+                <span class="workout-badge">Arms</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Triceps</h3>
+                    <div class="workout-icon">🦾</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/6TSm3uN3E9Q">Tricep Dips</li>
+                    <li data-video="https://www.youtube.com/embed/d7BY52M7xE8">Skull Crushers</li>
+                    <li data-video="https://www.youtube.com/embed/rMvh57_QGQY">Close-Grip Bench</li>
+                    <li data-video="https://www.youtube.com/embed/2-LAMcpzODU">Tricep Pushdown</li>
+                    <li data-video="https://www.youtube.com/embed/8iPEnn-ltC8">Overhead Tricep Extension</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shoulders -->
+        <div class="workout-card animate-on-scroll" data-workout="shoulders">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=400" alt="Shoulders Workout" loading="lazy">
+                <span class="workout-badge">Upper Body</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot active"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Shoulders</h3>
+                    <div class="workout-icon">🏋️</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/2yjwXTZCrDI">Overhead Press</li>
+                    <li data-video="https://www.youtube.com/embed/3VcKaXpzqRo">Lateral Raises</li>
+                    <li data-video="https://www.youtube.com/embed/eIPi0L1SvzU">Face Pulls</li>
+                    <li data-video="https://www.youtube.com/embed/79DijIt6LyM">Front Raises</li>
+                    <li data-video="https://www.youtube.com/embed/pYcpY20jXa8">Reverse Flyes</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chest -->
+        <div class="workout-card animate-on-scroll" data-workout="chest">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=400" alt="Chest Workout" loading="lazy">
+                <span class="workout-badge">Upper Body</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot active"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Chest</h3>
+                    <div class="workout-icon">🔥</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/rT7DgCr-3pg">Bench Press</li>
+                    <li data-video="https://www.youtube.com/embed/WFShLkwT1os">Push-ups</li>
+                    <li data-video="https://www.youtube.com/embed/eGjtNkqV7qY">Dumbbell Flyes</li>
+                    <li data-video="https://www.youtube.com/embed/8iPEnn-ltC8">Incline Bench Press</li>
+                    <li data-video="https://www.youtube.com/embed/taI4XhXfyzg">Cable Crossover</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back -->
+        <div class="workout-card animate-on-scroll" data-workout="back">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1603287681836-b174ce5074c2?w=400" alt="Back Workout" loading="lazy">
+                <span class="workout-badge">Upper Body</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active advanced"></span>
+                    <span class="difficulty-dot active advanced"></span>
+                    <span class="difficulty-dot active"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Back</h3>
+                    <div class="workout-icon">🎯</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/eGo4IYlbE5g">Pull-ups</li>
+                    <li data-video="https://www.youtube.com/embed/CAwf7n6Luuc">Lat Pulldown</li>
+                    <li data-video="https://www.youtube.com/embed/FWJR5Ve8bnQ">Barbell Rows</li>
+                    <li data-video="https://www.youtube.com/embed/op9kVnSso6Q">Deadlift</li>
+                    <li data-video="https://www.youtube.com/embed/GZbfZ466i6M">Seated Cable Row</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Legs -->
+        <div class="workout-card animate-on-scroll" data-workout="legs">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1434608519344-49d77a699e1d?w=400" alt="Legs Workout" loading="lazy">
+                <span class="workout-badge">Lower Body</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active advanced"></span>
+                    <span class="difficulty-dot active advanced"></span>
+                    <span class="difficulty-dot active"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Legs</h3>
+                    <div class="workout-icon">🦵</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/ultWZbUMPL8">Squats</li>
+                    <li data-video="https://www.youtube.com/embed/1rZ6zP8e6K0">Leg Press</li>
+                    <li data-video="https://www.youtube.com/embed/7j-2w4-P14I">Leg Curl</li>
+                    <li data-video="https://www.youtube.com/embed/8iPEnn-ltC8">Leg Extension</li>
+                    <li data-video="https://www.youtube.com/embed/gwLzYo48oN0">Calf Raises</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abs -->
+        <div class="workout-card animate-on-scroll" data-workout="abs">
+            <div class="workout-card-image">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" alt="Abs Workout" loading="lazy">
+                <span class="workout-badge">Core</span>
+                <div class="workout-difficulty">
+                    <span class="difficulty-dot active beginner"></span>
+                    <span class="difficulty-dot active intermediate"></span>
+                    <span class="difficulty-dot"></span>
+                </div>
+            </div>
+            <div class="workout-card-content">
+                <div class="workout-card-header">
+                    <h3>Abs</h3>
+                    <div class="workout-icon">⚡</div>
+                </div>
+                <ul class="exercise-list">
+                    <li data-video="https://www.youtube.com/embed/Xyd_fa5zoEU">Crunches</li>
+                    <li data-video="https://www.youtube.com/embed/pSHjTRCQxIw">Planks</li>
+                    <li data-video="https://www.youtube.com/embed/JB2oyawG9y8">Leg Raises</li>
+                    <li data-video="https://www.youtube.com/embed/wq3w9lH4jR8">Russian Twists</li>
+                    <li data-video="https://www.youtube.com/embed/8iPEnn-ltC8">Ab Wheel Rollout</li>
+                </ul>
+                <div class="workout-cta">
+                    <button class="workout-btn start-workout-btn">
+                        Start Workout
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+                    <span class="workout-count"><span>5</span> Exercises</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= WORKOUT MODAL ================= -->
+<div class="workout-modal" id="workoutModal">
+    <div class="workout-modal-overlay"></div>
+    <div class="workout-modal-content">
+        <button class="workout-modal-close" id="workoutModalClose">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="workout-modal-header">
+            <h2 id="workoutModalTitle">Workout</h2>
+            <p>Follow along with our tutorial videos</p>
+        </div>
+        <div class="workout-modal-body">
+            <div class="workout-video-container">
+                <iframe 
+                    id="workoutVideoFrame"
+                    src="" 
+                    title="Workout Tutorial"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="workout-exercises-list">
+                <h3>Exercises</h3>
+                <ul id="exerciseListContainer">
+                    <!-- Exercises will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

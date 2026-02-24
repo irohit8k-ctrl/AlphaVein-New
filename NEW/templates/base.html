@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AlphaVein Gym{% endblock %}</title>
+    <meta name="description" content="AlphaVein Gym - Your premier fitness destination. State-of-art equipment, expert trainers, and 24/7 access.">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+</head>
+<body>
+
+<!-- ================= SCROLL PROGRESS ================= -->
+<div class="scroll-progress"></div>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar" id="navbar">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="AlphaVein Gym" class="logo-img">
+    <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav>
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="{{ url_for('home') }}" class="nav-link" data-page="home">Home</a></li>
+            <li><a href="{{ url_for('about') }}" class="nav-link" data-page="about">About Us</a></li>
+            <li><a href="{{ url_for('workout') }}" class="nav-link" data-page="workout">Workouts</a></li>
+            <li><a href="{{ url_for('membership') }}" class="nav-link" data-page="membership">Memberships</a></li>
+            <li><a href="{{ url_for('contact') }}" class="nav-link" data-page="contact">Contact</a></li>
+            {% if session.get('user_name') %}
+            <li class="user-menu">
+                <a href="#" class="user-link">
+                    <span class="user-icon">👤</span>
+                    <span class="user-name">{{ session.get('user_name') }}</span>
+                </a>
+                <ul class="user-dropdown">
+                    <li><a href="{{ url_for('home') }}">My Profile</a></li>
+                    <li><a href="{{ url_for('membership') }}">My Membership</a></li>
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                </ul>
+            </li>
+            {% else %}
+            <li class="get-started-dropdown">
+                <a href="#" class="btn btn-get-started" id="getStartedBtn">
+                    Get Started
+                    <span class="dropdown-arrow">▼</span>
+                </a>
+                <div class="dropdown-menu">
+                    <div class="dropdown-header">
+                        <span class="header-icon">💪</span>
+                        Start Your Journey
+                    </div>
+                    <a href="{{ url_for('login_page') }}" class="dropdown-item">
+                        <span class="item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                                <polyline points="10 17 15 12 10 7"></polyline>
+                                <line x1="15" y1="12" x2="3" y2="12"></line>
+                            </svg>
+                        </span>
+                        <div class="item-content">
+                            <span class="item-title">Sign In</span>
+                            <span class="item-desc">Access your account</span>
+                        </div>
+                        <span class="item-arrow">→</span>
+                    </a>
+                    <a href="{{ url_for('login_page') }}#register" class="dropdown-item register-item">
+                        <span class="item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="8.5" cy="7" r="4"></circle>
+                                <line x1="20" y1="8" x2="20" y2="14"></line>
+                                <line x1="23" y1="11" x2="17" y2="11"></line>
+                            </svg>
+                        </span>
+                        <div class="item-content">
+                            <span class="item-title">Join Now</span>
+                            <span class="item-desc">Create new account</span>
+                        </div>
+                        <span class="item-arrow">→</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ url_for('membership') }}" class="dropdown-item">
+                        <span class="item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </span>
+                        <div class="item-content">
+                            <span class="item-title">View Plans</span>
+                            <span class="item-desc">Membership options</span>
+                        </div>
+                        <span class="item-arrow">→</span>
+                    </a>
+                    <div class="dropdown-footer">
+                        <span class="footer-text">Questions?</span>
+                        <a href="{{ url_for('contact') }}" class="footer-link">Contact Us</a>
+                    </div>
+                </div>
+            </li>
+            {% endif %}
+        </ul>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="AlphaVein Gym" class="logo-img">
+            <p>Transform your body and mind at AlphaVein Gym. We're committed to helping you achieve your fitness goals with state-of-the-art equipment and expert guidance.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">in</a>
+                <a href="#" aria-label="Twitter">X</a>
+                <a href="#" aria-label="YouTube">YT</a>
+            </div>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('about') }}">About Us</a></li>
+                <li><a href="{{ url_for('workout') }}">Workouts</a></li>
+                <li><a href="{{ url_for('membership') }}">Memberships</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-links">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#">Personal Training</a></li>
+                <li><a href="#">Group Classes</a></li>
+                <li><a href="#">Nutrition Plans</a></li>
+                <li><a href="#">Fitness Assessment</a></li>
+                <li><a href="#">Online Coaching</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-contact">
+            <h4>Newsletter</h4>
+            <p style="color: #a0a0a0; font-size: 14px; margin-bottom: 20px;">Subscribe to get the latest fitness tips and exclusive offers.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
+            <div style="margin-top: 25px;">
+                <div class="info-item" style="margin-bottom: 15px;">
+                    <span class="icon" style="font-size: 20px; width: 40px; height: 40px;">📍</span>
+                    <div>
+                        <strong style="font-size: 14px;">Address</strong>
+                        <p style="font-size: 13px;">123 Fitness Street, Gym City</p>
+                    </div>
+                </div>
+                <div class="info-item" style="margin-bottom: 0;">
+                    <span class="icon" style="font-size: 20px; width: 40px; height: 40px;">📞</span>
+                    <div>
+                        <strong style="font-size: 14px;">Phone</strong>
+                        <p style="font-size: 13px;">+1 (555) 123-4567</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>&copy; 2026 AlphaVein Gym. All rights reserved. | Designed with passion for fitness</p>
+    </div>
+</footer>
+
+<!-- ================= BACK TO TOP BUTTON ================= -->
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+{% block scripts %}{% endblock %}
+</body>
+</html>

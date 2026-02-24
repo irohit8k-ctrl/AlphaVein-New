@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Memberships - AlphaVein Gym{% endblock %}
+
+{% block content %}
+<!-- ================= MEMBERSHIP SECTION ================= -->
+<section class="section dark">
+    <div class="section-title animate-on-scroll">
+        <h2>Membership Plans</h2>
+        <p>Choose the perfect plan that fits your fitness goals and budget</p>
+    </div>
+    
+    <div class="membership-grid">
+        <!-- Basic Plan -->
+        <div class="membership-card animate-on-scroll">
+            <h3>Basic</h3>
+            <div class="price">$29<span>/month</span></div>
+            <ul class="features">
+                <li>Gym Access</li>
+                <li>Mon-Sat Hours</li>
+                <li>Locker Room</li>
+                <li>Free WiFi</li>
+                <li>Mobile App Access</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
+        </div>
+        
+        <!-- Standard Plan -->
+        <div class="membership-card featured animate-on-scroll">
+            <div class="badge">Most Popular</div>
+            <h3>Standard</h3>
+            <div class="price">$49<span>/month</span></div>
+            <ul class="features">
+                <li>Gym Access</li>
+                <li>24/7 Access</li>
+                <li>Locker Room</li>
+                <li>Personal Trainer (2x/month)</li>
+                <li>Group Classes</li>
+                <li>Free WiFi</li>
+                <li>Mobile App Access</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
+        </div>
+        
+        <!-- Premium Plan -->
+        <div class="membership-card animate-on-scroll">
+            <h3>Premium</h3>
+            <div class="price">$79<span>/month</span></div>
+            <ul class="features">
+                <li>Gym Access</li>
+                <li>24/7 Access</li>
+                <li>Locker Room</li>
+                <li>Personal Trainer (Weekly)</li>
+                <li>Unlimited Group Classes</li>
+                <li>Nutrition Plan</li>
+                <li>Free WiFi</li>
+                <li>Mobile App Access</li>
+            </ul>
+            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

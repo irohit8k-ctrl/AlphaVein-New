@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us - AlphaVein Gym{% endblock %}
+
+{% block content %}
+<!-- ================= CONTACT SECTION ================= -->
+<section class="section">
+    <div class="section-title animate-on-scroll">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for any inquiries or questions</p>
+    </div>
+    
+    <div class="contact-container">
+        <div class="contact-info animate-on-scroll">
+            <h3>Get In Touch</h3>
+            <div class="info-item">
+                <span class="icon">📍</span>
+                <div>
+                    <strong>Address</strong>
+                    <p>123 Fitness Street, Gym City, GC 12345</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="icon">📞</span>
+                <div>
+                    <strong>Phone</strong>
+                    <p>+1 (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="icon">✉️</span>
+                <div>
+                    <strong>Email</strong>
+                    <p>info@alphavein.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <span class="icon">🕐</span>
+                <div>
+                    <strong>Hours</strong>
+                    <p>Mon-Sat: 5:00 AM - 11:00 PM</p>
+                    <p>Sunday: 7:00 AM - 9:00 PM</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form animate-on-scroll">
+            <h3>Send Us a Message</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="tel" placeholder="Your Phone">
+                <select>
+                    <option value="">Select Interest</option>
+                    <option value="membership">Membership Inquiry</option>
+                    <option value="personal-training">Personal Training</option>
+                    <option value="classes">Group Classes</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}
