@@ -16,7 +16,7 @@
     </div>
 
     <div class="slide"
-         style="background-image: url('https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b');">
+         style="background-image: url('https://i.pinimg.com/1200x/98/2f/9f/982f9f395eae874d570ac60288d51487.jpg');">
         <div class="content">
             <h1>Build Real <span>Strength</span></h1>
             <p>Train Like a Champion</p>
@@ -25,7 +25,7 @@
     </div>
 
     <div class="slide"
-         style="background-image: url('https://images.unsplash.com/photo-1558611848-73f7eb4001ab');">
+         style="background-image: url('https://i.pinimg.com/1200x/af/84/22/af842292f56dc4d5c22a377579ddfdd9.jpg');">
         <div class="content">
             <h1>Push Your <span>Limits</span></h1>
             <p>Modern Equipment & Trainers</p>
@@ -107,8 +107,8 @@
     <div class="workout-grid">
         <!-- Biceps -->
         <div class="workout-card animate-on-scroll">
-            <img src="https://images.unsplash.com/photo-1597452485669-2c7bb5fef90d?w=400" alt="Biceps Workout" loading="lazy">
-            <div class="workout-card-content">
+            <img src="{{ url_for('static', filename='images/Bicep.jpg') }}" alt="Triceps Workout" loading="lazy">
+                <div class="workout-card-content">
                 <h3>Biceps</h3>
                 <ul>
                     <li>Barbell Curl</li>
@@ -122,7 +122,7 @@
 
         <!-- Triceps -->
         <div class="workout-card animate-on-scroll">
-            <img src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-1342504639-682e422451ce0.jpg?crop=0.622xw:0.930xh;0.210xw,0.0695xh&resize=1200:*" alt="Triceps Workout" loading="lazy">
+            <img src="{{ url_for('static', filename='images/tricep.jpg') }}" alt="Triceps Workout" loading="lazy">
             <div class="workout-card-content">
                 <h3>Triceps</h3>
                 <ul>
@@ -152,7 +152,7 @@
 
         <!-- Chest -->
         <div class="workout-card animate-on-scroll">
-            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400" alt="Chest Workout" loading="lazy">
+           <img src="{{ url_for('static', filename='images/chest.jpg') }}" alt="Triceps Workout" loading="lazy">
             <div class="workout-card-content">
                 <h3>Chest</h3>
                 <ul>
@@ -191,7 +191,6 @@
                     <li>Lunges</li>
                     <li>Leg Curl</li>
                     <li>Leg Extension</li>
-                    <li>Calf Raises</li>
                 </ul>
             </div>
         </div>
@@ -212,65 +211,7 @@
         </div>
     </div>
 </section>
-
-<!-- ================= MEMBERSHIP SECTION ================= -->
-<section id="membership" class="section dark">
-    <div class="section-title animate-on-scroll">
-        <h2>Membership Plans</h2>
-        <p>Choose the perfect plan that fits your fitness goals and budget</p>
-    </div>
     
-    <div class="membership-grid">
-        <!-- Basic Plan -->
-        <div class="membership-card animate-on-scroll">
-            <h3>Basic</h3>
-            <div class="price">$29<span>/month</span></div>
-            <ul class="features">
-                <li>Gym Access</li>
-                <li>Mon-Sat Hours</li>
-                <li>Locker Room</li>
-                <li>Free WiFi</li>
-                <li>Mobile App Access</li>
-            </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
-        </div>
-        
-        <!-- Standard Plan -->
-        <div class="membership-card featured animate-on-scroll">
-            <div class="badge">Most Popular</div>
-            <h3>Standard</h3>
-            <div class="price">$49<span>/month</span></div>
-            <ul class="features">
-                <li>Gym Access</li>
-                <li>24/7 Access</li>
-                <li>Locker Room</li>
-                <li>Personal Trainer (2x/month)</li>
-                <li>Group Classes</li>
-                <li>Free WiFi</li>
-                <li>Mobile App Access</li>
-            </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
-        </div>
-        
-        <!-- Premium Plan -->
-        <div class="membership-card animate-on-scroll">
-            <h3>Premium</h3>
-            <div class="price">$79<span>/month</span></div>
-            <ul class="features">
-                <li>Gym Access</li>
-                <li>24/7 Access</li>
-                <li>Locker Room</li>
-                <li>Personal Trainer (Weekly)</li>
-                <li>Unlimited Group Classes</li>
-                <li>Nutrition Plan</li>
-                <li>Free WiFi</li>
-                <li>Mobile App Access</li>
-            </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
-        </div>
-    </div>
-</section>
-
 <!-- ================= CONTACT SECTION ================= -->
 <section id="contact" class="section">
     <div class="section-title animate-on-scroll">
@@ -292,14 +233,14 @@
                 <span class="icon">📞</span>
                 <div>
                     <strong>Phone</strong>
-                    <p>+1 (555) 123-4567</p>
+                    <p>+91 76592-15895</p>
                 </div>
             </div>
             <div class="info-item">
                 <span class="icon">✉️</span>
                 <div>
                     <strong>Email</strong>
-                    <p>info@alphavein.com</p>
+                    <p>alphavein07@gmail.com</p>
                 </div>
             </div>
             <div class="info-item">
@@ -307,7 +248,6 @@
                 <div>
                     <strong>Hours</strong>
                     <p>Mon-Sat: 5:00 AM - 11:00 PM</p>
-                    <p>Sunday: 7:00 AM - 9:00 PM</p>
                 </div>
             </div>
         </div>

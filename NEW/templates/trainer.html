@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+
+{% block title %}Trainers - AlphaVein Gym{% endblock %}
+
+{% block content %}
+<!-- ================= TRAINER SECTION ================= -->
+<section class="section dark">
+    <div class="section-title">
+        <h2>Our Elite <span style="color: var(--primary-color);">Trainers</span></h2>
+        <p>Meet our certified professionals who will guide you to achieve your fitness goals with personalized training programs.</p>
+    </div>
+
+    <div class="team-grid">
+        <!-- Trainer 1 -->
+        <div class="team-card">
+            <div class="team-image">
+            <img src="{{ url_for('static', filename='images/me.png') }}" alt="John Doe">                
+                    <div class="team-overlay">
+                    <div class="team-social">
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-info">
+                <h3>John Doe</h3>
+                <span>Head Trainer</span>
+                <p>10+ years experience in strength training and bodybuilding. Certified NSCA-CPT.</p>
+            </div>
+        </div>
+
+        <!-- Trainer 2 -->
+        <div class="team-card">
+            <div class="team-image">
+                <img src="https://media.voguearabia.com/photos/68553a44ccaa0c7445da4b6c/3:2/w_2560%2Cc_limit/GettyImages-1366315869.jpg=crop" alt="Sarah Wilson">
+                <div class="team-overlay">
+                    <div class="team-social">
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-info">
+                <h3>Sarah Wilson</h3>
+                <span>Yoga & Pilates Expert</span>
+                <p>Specializes in flexibility, core strength, and injury rehabilitation.</p>
+            </div>
+        </div>
+
+        <!-- Trainer 3 -->
+        <div class="team-card">
+            <div class="team-image">
+                <img src="https://www.eatthis.com/wp-content/uploads/sites/4/2023/01/mature-muscular-man-treadmill.jpg?quality=82&strip=1=crop" alt="Mike Johnson">
+                <div class="team-overlay">
+                    <div class="team-social">
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-info">
+                <h3>Mike Johnson</h3>
+                <span>Cardio Specialist</span>
+                <p>Expert in HIIT, endurance training, and marathon preparation programs.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); text-align: center; padding: 80px 50px;">
+    <h2 style="color: white; font-size: 42px; margin-bottom: 20px;">Ready to Train?</h2>
+    <p style="color: rgba(255,255,255,0.9); font-size: 18px; margin-bottom: 35px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Book a free consultation with one of our expert trainers.
+    </p>
+    <a href="{{ url_for('contact') }}" class="btn" style="background: rgba(255,255,255,0.2); border: 2px solid white; color: white; padding: 16px 40px; font-size: 16px;">
+        Book Consultation
+    </a>
+</section>
+{% endblock %}

@@ -91,6 +91,42 @@
                         <span class="input-icon">✉️</span>
                     </div>
                     <div class="form-group floating">
+                        <input type="tel" id="register-phone" name="phone" placeholder=" ">
+                        <label for="register-phone">Phone Number</label>
+                        <span class="input-icon">📱</span>
+                    </div>
+                    <div class="form-group floating">
+                        <input type="text" id="register-address" name="address" placeholder=" ">
+                        <label for="register-address">Address</label>
+                        <span class="input-icon">📍</span>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group floating">
+                            <input type="date" id="register-dob" name="date_of_birth" placeholder=" ">
+                            <label for="register-dob">Date of Birth</label>
+                        </div>
+                        <div class="form-group floating">
+                            <select id="register-gender" name="gender">
+                                <option value="">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group floating">
+                        <select id="register-membership" name="membership_plan">
+                            <option value="Basic">Basic Membership</option>
+                            <option value="Premium">Premium Membership</option>
+                            <option value="VIP">VIP Membership</option>
+                        </select>
+                    </div>
+                    <div class="form-group floating">
+                        <input type="tel" id="register-emergency" name="emergency_contact" placeholder=" ">
+                        <label for="register-emergency">Emergency Contact</label>
+                        <span class="input-icon">🆘</span>
+                    </div>
+                    <div class="form-group floating">
                         <input type="password" id="register-password" name="password" placeholder=" " required>
                         <label for="register-password">Password</label>
                         <button type="button" class="password-toggle" onclick="togglePassword('register-password')">👁️</button>

@@ -14,7 +14,7 @@
         <!-- Basic Plan -->
         <div class="membership-card animate-on-scroll">
             <h3>Basic</h3>
-            <div class="price">$29<span>/month</span></div>
+            <div class="price">₹999<span>/month</span></div>
             <ul class="features">
                 <li>Gym Access</li>
                 <li>Mon-Sat Hours</li>
@@ -22,14 +22,13 @@
                 <li>Free WiFi</li>
                 <li>Mobile App Access</li>
             </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
-        </div>
+            <button class="btn pay-btn" data-amount="99900">Join Now</button>        </div>
         
         <!-- Standard Plan -->
         <div class="membership-card featured animate-on-scroll">
             <div class="badge">Most Popular</div>
             <h3>Standard</h3>
-            <div class="price">$49<span>/month</span></div>
+            <div class="price">₹1,999<span>/month</span></div>
             <ul class="features">
                 <li>Gym Access</li>
                 <li>24/7 Access</li>
@@ -39,13 +38,13 @@
                 <li>Free WiFi</li>
                 <li>Mobile App Access</li>
             </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
+            <button class="btn pay-btn" data-amount="199900">Join Now</button>
         </div>
         
         <!-- Premium Plan -->
         <div class="membership-card animate-on-scroll">
             <h3>Premium</h3>
-            <div class="price">$79<span>/month</span></div>
+            <div class="price">₹2,999<span>/month</span></div>
             <ul class="features">
                 <li>Gym Access</li>
                 <li>24/7 Access</li>
@@ -56,8 +55,59 @@
                 <li>Free WiFi</li>
                 <li>Mobile App Access</li>
             </ul>
-            <a href="{{ url_for('contact') }}" class="btn">Join Now</a>
+            <button class="btn pay-btn" data-amount="299900">Join Now</button>
         </div>
     </div>
 </section>
+
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.querySelectorAll(".pay-btn").forEach(button => {
+    button.addEventListener("click", function() {
+        let amount = this.getAttribute("data-amount");
+
+        fetch("/create_order", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ amount: amount })
+        })
+        .then(res => res.json())
+        .then(order => {
+
+            let options = {
+                "key": "rzp_test_SVM6izqpMxSRa4",
+                "amount": order.amount,
+                "currency": "INR",
+                "name": "AlphaVein Gym",
+                "description": "Membership Payment",
+                "order_id": order.id,
+
+                "handler": function (response){
+                    alert("Payment Successful!");
+                    console.log(response);
+                },
+
+                "prefill": {
+                    "name": "Student",
+                    "email": "student@example.com",
+                    "contact": "9999999999"
+                },
+
+                "theme": {
+                    "color": "#ff4d4d"
+                }
+            };
+
+            let rzp = new Razorpay(options);
+            rzp.open();
+        });
+    });
+});
+</script>
+
 {% endblock %}
+

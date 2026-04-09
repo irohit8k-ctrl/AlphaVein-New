@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Panel - AlphaVein Gym{% endblock %}
+
+{% block content %}
+<div class="container" style="padding: 2rem 0;">
+    <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+        <h1>Admin Panel</h1>
+        <p style="color: #666; font-size: 1.1rem;">View all customer data ({{ users|length }} total customers)</p>
+    </div>
+    
+    <div class="admin-actions" style="text-align: center; margin-bottom: 2rem;">
+        <a href="{{ url_for('logout') }}" class="btn" style="background: #dc3545; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 5px;">Logout</a>
+    </div>
+    
+    <div class="table-responsive" style="background: white; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); overflow: hidden;">
+        <table class="customers-table" style="width: 100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <th style="padding: 1rem; text-align: left; color: white;">ID</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Name</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Email</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Phone</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Membership</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Gender</th>
+                    <th style="padding: 1rem; text-align: left; color: white;">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 1rem; font-weight: 500; color: #333;">{{ user.id }}</td>
+                    <td style="padding: 1rem; color: #333;">{{ user.name }}</td>
+                    <td style="padding: 1rem; font-size: 0.95rem; color: #333;">{{ user.email }}</td>
+                    <td style="padding: 1rem; color: #333;">{{ user.phone or 'N/A' }}</td>
+                    <td style="padding: 1rem;">
+                        <span style="padding: 0.3rem 0.6rem; border-radius: 20px; font-size: 0.85rem; font-weight: 500;
+                            {% if user.membership_plan == 'Basic' %}background: #e3f2fd; color: #1976d2;{% elif user.membership_plan == 'Premium' %}background: #fff3e0; color: #f57c00;{% else %}background: #e8f5e8; color: #388e3c;{% endif %}">
+                            {{ user.membership_plan }}
+                        </span>
+                    </td>
+                    <td style="padding: 1rem; color: #333;">{{ user.gender or 'N/A' }}</td>
+                    <td style="padding: 1rem; color: #666; font-size: 0.9rem;">{{ user.created_at or 'N/A' }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    {% if not users %}
+    <div style="text-align: center; padding: 4rem; color: #666;">
+        <h3>No customers yet</h3>
+        <p>Customers will appear here after they register.</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
